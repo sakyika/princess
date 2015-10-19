@@ -1,0 +1,1 @@
+mysql -u princess -p -D princess < CoreTables.sql

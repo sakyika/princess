@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="princess" ng-controller="AppCtrl">
+	<head>
+		<title ng-bind="pageTitle"></title>
+
+    <!-- social media tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@joshdmiller">
+    <meta name="twitter:title" content="ngBoilerplate">
+    <meta name="twitter:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+    <meta name="twitter:creator" content="@joshdmiller">
+    <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846">
+    <meta property="og:title" content="ngBoilerplate" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://bit.ly/ngBoilerplate" />
+    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
+    <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <!-- Favicon (added)-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    
+    
+    <!--Basic Styles (added)-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link ng-if="settings.rtl" ng-href="assets/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+    
+    
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+    
+    
+     <!--Fonts  (added) -->
+     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300"
+              rel="stylesheet" type="text/css">
+              
+	
+    <!--Beyond styles (added)-->
+	<link ng-if="!settings.rtl" href="assets/css/beyond.min.css" rel="stylesheet" />
+	<link ng-if="settings.rtl" href="assets/css/beyond-rtl.min.css" rel="stylesheet" />
+	<link href="assets/css/demo.min.css" rel="stylesheet" />
+	<link href="assets/css/typicons.min.css" rel="stylesheet" />
+	<link href="assets/css/animate.min.css" rel="stylesheet" />
+	<link ng-href="{{settings.skin}}" rel="stylesheet" type="text/css" />
+    
+
+    
+	</head>
+	<body>
+  
+		
+		<div ui-view="main"></div>
+		
+		<script src="assets/lib/jquery/jquery.min.js"></script> 
+		<script src="assets/lib/jquery/bootstrap.js"></script>
+ 		
+		
+		<!-- (These 2 scripts moved) -->	
+		<!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+   		<script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+    	<!-- it's stupid to have to load it here, but this is for the +1 button -->
+    	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+			{ "parsetags": "explicit" }
+    	</script>
+		
+		<!-- (Added) -->
+		<script src="assets/lib/utilities.js"></script>
+		<script src="assets/lib/jquery/slimscroll/jquery.slimscroll.js"></script>
+		
+		
+		
+		
+		<!-- Layout Related Directives (added)-->
+        <script src="assets/directives/loading.js"></script>
+        <script src="assets/directives/skin.js"></script>
+        <script src="assets/directives/sidebar.js"></script>
+        <script src="assets/directives/header.js"></script>
+        <script src="assets/directives/navbar.js"></script>
+        <script src="assets/directives/chatbar.js"></script>
+        <script src="assets/directives/widget.js"></script>
+		
+ 
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!-- Loading Container -->
+<div class="loading-container" data-ng-include=" 'core/loading.tpl.html' "></div>
+<!--  /Loading Container -->
+
+<!-- Navbar -->
+<div class="navbar {{settings.fixed.navbar ? 'navbar-fixed-top' : ''}}" data-ng-include=" 'core/navbar.tpl.html' "></div>
+<!-- /Navbar -->
+
+<div class="main-container container-fluid">
+	<!-- Page Container -->
+	<div class="page-container">
+		<!-- Page Sidebar -->
+		<div class="page-sidebar {{settings.fixed.sidebar ? 'sidebar-fixed' : ''}}" id="sidebar" data-ng-include=" 'core/sidebar.tpl.html' ">
+		</div>
+		<!-- /Page Sidebar -->
+		<!-- Chat Bar -->
+		<div id="chatbar" class="page-chatbar" data-ng-include=" 'core/chatbar.tpl.html' ">
+		</div>
+		<!-- /Chat Bar -->
+		<!-- Page Content -->
+		<div class="page-content">
+			<!-- Page Breadcrumb -->
+			<div class="page-breadcrumbs {{settings.fixed.breadcrumbs ? 'breadcrumbs-fixed' : ''}}" data-ng-include=" 'core/breadcrumbs.tpl.html' ">
+			</div>
+			<!-- /Page Breadcrumb -->
+			<!-- Page Header -->
+			<div class="page-header position-relative {{settings.fixed.header ? 'page-header-fixed' : ''}}" data-ng-include=" 'core/header.tpl.html' ">
+			</div>
+			<!-- /Page Header -->
+            <!-- Page Body -->
+			<div class="page-body" ui-view="main">
+				<!-- Your Content Goes Here -->
+			</div>
+			<!-- /Page Body -->
+		</div>
+		<!-- /Page Content -->
+	</div>
+	<!-- /Page Container -->
+	<!-- Main Container -->
+
+</div>

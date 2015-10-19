@@ -1,0 +1,234 @@
+    <!-- Page Sidebar Header-->
+<div class="sidebar-header-wrapper">
+    <input type="text" class="searchinput" />
+    <i class="searchicon fa fa-search"></i>
+    <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
+</div>
+<!-- /Page Sidebar Header -->
+<!-- Sidebar Menu -->
+<ul class="nav sidebar-menu">
+    <!--Dashboard-->
+    <li ui-sref-active="active">
+        <a ui-sref="app.home">
+            <i class="menu-icon glyphicon glyphicon-home"></i>
+            <span class="menu-text"> Home </span>
+        </a>
+    </li>
+    <!--Patients-->
+    <li>
+        <a ui-sref="app.patients" class="menu-dropdown">
+            <i class="menu-icon fa fa-users"></i>
+            <span class="menu-text"> Patients </span>
+
+            <i class="menu-expand"></i>
+        </a>
+	
+        <ul class="submenu">
+            <li ui-sref-active="active">
+                <a ui-sref="app.patients-chiropractic">
+                    <span class="menu-text"> Chiropractic </span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.patients-massage">
+                    <span class="menu-text"> Massage </span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.patients-acupuncture">
+                    <span class="menu-text"> Acupuncture </span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <!--Widgets-->
+    <li ui-sref-active="active">
+        <a ui-sref="princess.widgets">
+            <i class="menu-icon fa fa-th"></i>
+            <span class="menu-text"> Widgets </span>
+        </a>
+    </li>
+    <!--UI Elements-->
+    <li >
+        <a href="#" class="menu-dropdown">
+            <i class="menu-icon fa fa-desktop"></i>
+            <span class="menu-text"> Elements </span>
+
+            <i class="menu-expand"></i>
+        </a>
+
+        <ul class="submenu">
+            <li ui-sref-active="active">
+                <a ui-sref="princess.elements">
+                    <span class="menu-text">Basic Elements</span>
+                </a>
+            </li>
+            <li >
+                <a href="#" class="menu-dropdown">
+                    <span class="menu-text">
+                        Icons
+                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+
+                <ul class="submenu">
+                    <li ui-sref-active="active">
+                        <a ui-sref="princess.fontawesome">
+                            <i class="menu-icon fa fa-rocket"></i>
+                            <span class="menu-text">Font Awesome</span>
+                        </a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="princess.glyphicons">
+                            <i class="menu-icon glyphicon glyphicon-stats"></i>
+                            <span class="menu-text">Glyph Icons</span>
+                        </a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="princess.typicons">
+                            <i class="menu-icon typcn typcn-location-outline"></i>
+                            <span class="menu-text"> Typicons</span>
+                        </a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="princess.weathericons">
+                            <i class="menu-icon wi wi-hot"></i>
+                            <span class="menu-text">Weather Icons</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="princess.tabs">
+                    <span class="menu-text">Tabs & Accordions</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="princess.alerts">
+                    <span class="menu-text">Alerts & Tooltips</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="princess.modals">
+                    <span class="menu-text">Modals & Wells</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="princess.buttons">
+                    <span class="menu-text">Buttons</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="princess.nestablelist">
+                    <span class="menu-text"> Nestable List</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="princess.treeview">
+                    <span class="menu-text">Treeview</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    
+    
+    
+    <!--Profile-->
+    <li ui-sref-active="active">
+        <a ui-sref="princess.profile" href="#">
+            <i class="menu-icon fa fa-user-md"></i>
+            <span class="menu-text">Profile</span>
+        </a>
+    </li>
+    
+    <!--More Pages-->
+    <li>
+        <a href="#" class="menu-dropdown">
+            <i class="menu-icon glyphicon glyphicon-link"></i>
+
+            <span class="menu-text">
+                More Pages
+            </span>
+
+            <i class="menu-expand"></i>
+        </a>
+
+        <ul class="submenu">
+            <li ui-sref-active="active">
+                <a ui-sref="error404">
+                    <span class="menu-text">Error 404</span>
+                </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="error500">
+                    <span class="menu-text"> Error 500</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="princess.blank">
+                    <span class="menu-text">Blank Page</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="princess.grid">
+                    <span class="menu-text"> Grid</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-dropdown">
+                    <span class="menu-text">
+                        Multi Level Menu
+                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+
+                <ul class="submenu">
+                    <li>
+                        <a href="#">
+                            <i class="menu-icon fa fa-camera"></i>
+                            <span class="menu-text">Level 3</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-asterisk"></i>
+
+                            <span class="menu-text">
+                                Level 4
+                            </span>
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="#">
+                                    <i class="menu-icon fa fa-bolt"></i>
+                                    <span class="menu-text">Some Item</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="menu-icon fa fa-bug"></i>
+                                    <span class="menu-text">Another Item</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    
+    <li ui-sref-active="active">
+        <a ui-sref="princess.versions">
+            <i class="menu-icon glyphicon glyphicon-fire themesecondary"></i>
+            <span class="menu-text">
+                About
+            </span>
+        </a>
+    </li>
+</ul>
+<!-- /Sidebar Menu -->

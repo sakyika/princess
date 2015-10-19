@@ -1,0 +1,299 @@
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-darkorange">
+				<span class="widget-caption">Present Complaint</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-darkorange" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div id="painType" class="form-group">	<!-- Checkboxe form froup one -->
+						<label for="sharpCheckbox">Pain type: </label>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+									<span class="text">Sharp</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+									<span class="text">Dull</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Throbbing</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Aching</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Burning</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Stabbing</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Weakness</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+									<span class="text">Numbness</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Tingling</span>
+								</label>
+						</div>	<!-- Checkboxes form group one ends-->
+						
+					<!--
+					<div class="row">
+						<div class="col-lg-5 col-sm-5 col-xs-5">
+							<label>
+								<input type="checkbox" class="text" checked="checked">
+								<span class="text">Other</span>
+							</label>
+							<input type="text" class="form-control" placeholder="Other pain type description">
+						</div>
+					</div>	-->
+					<hr />
+					<div class="row">
+						<div class="col-xs-1 col-md-1 col-lg-1">
+						<label>
+								<input type="checkbox" class="text" >
+								<span class="text">Other</span>
+							</label>
+						</div>
+					
+						<div class="col-xs-4 col-md-4 col-lg-4">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="Other condition">
+								</span>	
+							</div>
+					</div>
+					<hr />
+					<br />
+					<div class="row">
+						<div class="col-sm-3">
+							<label>Location of the pain</label>
+							<div class="form-group">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="Pain location"> <i
+									class="fa fa-street-view"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<label for="slider">Have you had this problem before?</label>
+							<label id="slider">
+								<input class="checkbox-slider slider-icon yesno" type="checkbox">
+								<span class="text"> </span>
+						</label>
+						</div>
+						<div class="col-sm-3">
+							<label>When did it last occur?</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+						</div>
+						<div class="col-sm-3">
+							<label>How did it happen</label>
+							<div class="form-group">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="How?"> <i
+									class="fa fa-question palegreen"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<hr />
+					<div class="row">
+						<div class="col-sm-3">
+							<label>What makes it worst?</label>
+							<div class="form-group">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="What makes it worst"> <i
+									class="fa fa-street-view"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<label>What makes it better?</label>
+							<div class="form-group">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="What makes it worst"> <i
+									class="fa fa-street-view"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label for="slider">Does the pain radiate?</label>
+							<label id="slider">
+								<input class="checkbox-slider slider-icon yesno" type="checkbox">
+								<span class="text"> </span>
+						</label>
+						</div>
+						<div class="col-sm-4">
+							<label>If yes, where?</label>
+							<div class="form-group">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="Where pain radiates"> <i
+									class="fa fa-street-view"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<hr />
+					<div class="form-group">	<!-- Title Form group -->
+							<label for="mrRadioBtn">Is the pain(pattern): </label>
+                            <div id="mrRadioBtn" class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blue" checked="checked">
+                                    <span class="text">Constant</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-danger">
+                                    <span class="text">Intermittent</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-success">
+                                    <span class="text">Varies</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">No-Pattern</span>
+                                </label>
+                            </div>
+                        </div>	<!-- Title Form group ends -->
+                        <hr />
+                        <label for="painPattern">On a scale from 1 to 10 (10 being the worst pain you've ever experienced), how would you rate your pain?</label>
+                        <div id="painPattern" class="form-group">	<!-- Title Form group -->
+                            <div id="mrRadioBtn" class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blue" >
+                                    <span class="text">1</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-danger">
+                                    <span class="text">2</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-success">
+                                    <span class="text">3</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">4</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">5</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">6</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">7</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">8</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">9</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">10</span>
+                                </label>
+                            </div>
+                        </div>	<!-- Title Form group ends -->
+                        <hr />
+                        <label for="painPattern">On a scale from 1 to 10 (10 being the worst pain you've ever experienced), how would you rate your pain?</label>
+                        <div id="painPattern" class="form-group">	<!-- Title Form group -->
+                            <div id="mrRadioBtn" class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blue" >
+                                    <span class="text">In the morning</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-danger">
+                                    <span class="text">Mid-Afternoon</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-success">
+                                    <span class="text">Evening</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">At night(wakes me up)</span>
+                                </label>
+                            </div>
+                        </div>	<!-- Title Form group ends -->
+                        <hr />
+					<br />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+<div class="class="buttons-preview"">
+
+	<a class="btn btn-success " href="javascript:void(0);"><i class="fa fa-plus"></i> Add</a>
+	
+	<a class="btn btn-danger " href="javascript:void(0);"><i class="fa fa-times"></i> Cancel</a>
+
+</div>
+

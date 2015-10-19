@@ -1,0 +1,76 @@
+angular.module( 'princess.profile', [
+	'ui.router',
+	'placeholders',
+	'ui.bootstrap',
+	'oc.lazyLoad'
+])
+
+.config(function config($stateProvider){
+	$stateProvider.state( 'app.profile', {
+		url: '/profile',
+		views: {
+			"main": {
+				controller: 'ProfileCtrl',
+				templateUrl: 'profile/profile.tpl.html'
+			}
+		},
+		ncyBreadcrumb: {
+			label: 'User Profile',
+			description: ''
+		},
+		resolve: {
+			deps: function($ocLazyLoad){
+				return $ocLazyLoad.load({
+					serie: true,
+					files:['assets/lib/jquery/charts/flot/jquery.flot.js', 'assets/lib/jquery/charts/flot/jquery.flot.resize.js']
+				});
+			}
+		},
+		data: {pageTitle: 'User Profile' }
+	});
+})
+
+.controller('ProfileCtrl', function ProfileCtrl($rootScope, $scope){
+	
+	$scope.visitChartData = [{
+        color: $rootScope.settings.color.themeprimary,
+        label: "Visits",
+        data: [[3, 10], [4, 13], [5, 12], [6, 16], [7, 19], [8, 19], [9, 24], [10, 19], [11, 18], [12, 21], [13, 17],
+            [14, 14], [15, 12], [16, 14], [17, 15]]
+    }];
+    $scope.visitChartOptions = {
+        series: {
+            lines: {
+                show: true,
+                fill: true,
+                fillColor: { colors: [{ opacity: 0.2 }, { opacity: 0 }] }
+            },
+            points: {
+                show: true
+            }
+        },
+        legend: {
+            show: false
+        },
+        xaxis: {
+            tickDecimals: 0,
+            tickLength: 0,
+            color: '#ccc'
+        },
+        yaxis: {
+            min: 0,
+            tickLength: 0,
+            color: '#ccc'
+        },
+        grid: {
+            hoverable: true,
+            clickable: false,
+            borderWidth: 0,
+            aboveData: false,
+            color: '#fbfbfb'
+
+        },
+        tooltip: true
+    };
+	
+});

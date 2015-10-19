@@ -1,0 +1,1790 @@
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<h5 class="row-title before-darkorange"><i class="fa fa-plus-circle darkorange"></i>New Patient Form</h5>
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-darkorange">
+				<span class="widget-caption">Personal Information</span>
+				<div class="widget-buttons">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a> 
+					<a href="" widget-dispose></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div class="form-group">	<!-- Title Form group -->
+							<label for="mrRadioBtn">Title: </label>
+                            <div id="mrRadioBtn" class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blue">
+                                    <span class="text">Mr.</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-danger">
+                                    <span class="text"> Mrs.</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-success">
+                                    <span class="text"> Miss.</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text"> Ms.</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text"> Dr.</span>
+                                </label>
+                            </div>
+                        </div>	<!-- Title Form group ends -->
+                        <hr />
+						<div class="row">	<!-- First row -->
+							<div class="col-sm-3">
+								<label>Last Name</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Last Name"> <i
+										class="fa fa-user maroon"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+							<label>First Name</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="First Name"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+							<label>Date of birth</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                            <label>Home Phone</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Home Phone"> <i
+										class="glyphicon glyphicon-phone-alt"></i>
+									</span>
+								</div>
+							</div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+						<div class="row">  <!-- Second row --> 
+                            <div class="col-sm-2">
+                            	<label>Work Phone</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Work Phone"> <i
+										class="glyphicon glyphicon-earphone"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<label>Cell Phone</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Cell Phone"> <i
+										class="glyphicon glyphicon-phone"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<label>Occupation</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Occupation"> <i
+										class="glyphicon glyphicon-phone"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Employer/Business Name</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Employer/Business Name"> <i
+										class="glyphicon glyphicon-briefcase"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Email</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Email"> <i
+										class="glyphicon glyphicon-envelope blue"></i>
+									</span>
+								</div>
+							</div>
+                        </div> <!-- Second row ends--> 
+                        <hr />
+						<div class="row">	<!-- Third row --> 
+							<div class="col-sm-6">
+								<label>Address</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Address"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Emergency Contact</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Emergency contact"> <i
+										class="glyphicon glyphicon-user"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Emergency Contact Phone</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Emergency contact phone"> <i
+										class="glyphicon glyphicon-earphone"></i>
+									</span>
+								</div>
+							</div>
+						</div>	<!-- Third row ends--> 
+						<hr />
+						<div class="row">	<!-- Fourth row --> 
+							<div class="col-sm-12">
+								<label>How did you hear about the office?</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="How you heard about the office?"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+						</div>	<!-- Fourth row ends-->
+						<hr />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-blue">
+				<span class="widget-caption">Previous Chiropractic Experience</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-blue" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div class="row">	<!-- First row -->
+							<div class="col-sm-3">
+							<label>Chiropractor's Name</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Chiropractor's Name"> <i
+										class="fa fa-user maroon"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Location</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Location"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Phone Number</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Phone Number"> <i
+										class="glyphicon glyphicon-phone-alt"></i>
+									</span>
+								</div>
+							</div>
+                            <div class="col-sm-3">
+								<label>Date of Last Chiropractic Visit</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>	<!-- First row ends-->
+						<div class="row">	<!-- Fourth row --> 
+							<div class="col-xs-2 col-md-2 col-lg-2">
+								<label>Any X-RAY taken?  </label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno colored-blue" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+						</div>	<!-- Fourth row ends-->
+						<hr />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-maroon">
+				<span class="widget-caption">Medical History</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-maroon" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize class="maroon"></a> 
+					<a href="" widget-collapse class="maroon"></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div class="row">	<!-- First row -->
+							<div class="col-sm-3">
+								<label>Name of Family Doctor</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Family doctor's name"> <i
+										class="fa fa-user maroon"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Phone number</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Family doctor's phone number"> <i
+										class="glyphicon glyphicon-earphone"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Address</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Family doctor's address"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Last full-physical check-up:</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+						<div class="row">
+							<div class="col-xs-3">
+								<label>Are you currently on any medication?  </label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-1">
+								<label> </label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> 
+									<label>First Medication</label>
+									</span>
+								</div>
+							</div>
+                        	<div class="col-sm-2">
+								<label>Type:</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Type"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<label>For:</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="For"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<label>Dose:</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Dose"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<label>Frequency:</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Frequency"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+                        </div>
+                        <div class="row">
+						  	<div class="col-xs-3">
+								<label>  </label>
+								<label>
+									<label></label>
+									<span class="text"></span>
+								</label>
+                        	</div> 
+                        	<div class="col-sm-1">
+								<label> </label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> 
+									<label>Second Medication</label>
+									</span>
+								</div>
+							</div>
+                        	<div class="col-sm-2">
+								<label>Type:</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Type"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<label>For:</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="For"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<label>Dose:</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Dose"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<label>Frequency:</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Frequency"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+                        </div>
+                        <hr />
+                        <div class="row">
+							<div class="col-xs-3">
+								<label>Have you ever had any surgery?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-1">
+								<label> </label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> 
+									<label>First Surgery</label>
+									</span>
+								</div>
+							</div>
+                        	<div class="col-sm-2">
+								<label>First surgery</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="First surgery"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Date</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+							<div class="col-xs-1">
+								<label>Complications</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        </div>
+                        <div class="row">
+						  	<div class="col-xs-3">
+								<label>  </label>
+								<label>
+									<label></label>
+									<span class="text"></span>
+								</label>
+                        	</div> 
+                        	<div class="col-sm-1">
+								<label> </label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> 
+									<label>Second Surgery</label>
+									</span>
+								</div>
+							</div>
+                        	<div class="col-sm-2">
+								<label>Second surgery</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Second surgery"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Date</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+							<div class="col-xs-1">
+								<label>Complications</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                        	<div class="col-sm-6">
+								<label>List any hospitalization and reasons for it</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Hospitalizations and reasons"> <i
+										class="glyphicon glyphicon-globe"></i>
+									</span>
+								</div>
+							</div>
+                        </div>
+                        <hr />
+                        <div id="painType" class="form-group">	<!-- Checkboxe form froup one -->
+		<!--  				<label for="sharpCheckbox">Pain type: </label>	-->
+								<label class="checkbox-inline">
+									<input type="checkbox">
+									<span class="text">Vision</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+									<span class="text">Hearing</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Smell</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Taste</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Dizziness</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Headaches</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Difficulty swallowing</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+									<span class="text">Loss of balance</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">night sweats</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Diabetes</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Stroke</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Aneurysm</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Heart condition</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Osteoporosis</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Arthritis</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Prostate disorders</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Menstrual problems</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Hepatitis</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">HIV infected</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Shortness of breath</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Cancer</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">STD</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Tuberculosis</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Chest pain</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">High blood pressure</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Digestive problems</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Bowel problems</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Bladder problems</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Significant weight loss</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Pin/Needles in arms</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Numbness in fingers</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Weakness in fingers</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Numbness in legs</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Weakness in legs</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Back pain</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Neck pain</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">TMJ disorder</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Ear ringing</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Other</span>
+								</label>
+								
+						</div>	<!-- Checkboxes form group one ends-->
+						<hr />
+                        <div class="row">
+							<div class="col-xs-8">
+								<label>I consent to allow my chiropractor to contact my medical doctory about my health care  </label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>                        
+                        </div>
+						<hr />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-darkorange">
+				<span class="widget-caption">Family History</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-darkorange" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<label>Only check mark if any of the following family members: mother, father, siblings or grandparents suffer from the below conditions.</label>
+						<div class="row">	<!-- Checkbox form froup one -->
+							<div class="col-md-8"
+							<label class="checkbox-inline">
+								<input type="checkbox">
+								<span class="text">Heart Disease</span>
+							</label>
+							<label class="checkbox-inline">
+								<input type="checkbox" >
+								<span class="text">Arthritis</span>
+							</label>
+							<label class="checkbox-inline">
+								<input type="checkbox" >
+								<span class="text">Cancer</span>
+							</label>
+							<label class="checkbox-inline">
+								<input type="checkbox" >
+								<span class="text">Diabetes</span>
+							</label>
+							<label class="checkbox-inline">
+								<input type="checkbox">
+								<span class="text">Psycho/Socia Disease</span>
+							</label>
+							<label class="checkbox-inline">
+								<input type="checkbox" >
+								<span class="text">Other</span>
+							</label>
+							</div>
+							<div class="col-xs-4 col-md-4 col-lg-4">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="Other condition">
+								</span>	
+							</div>
+							<br />
+						</div>
+						<hr />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-darkorange">
+				<span class="widget-caption">Health Habit</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-darkorange" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div class="row">
+							<div class="col-xs-2">
+								<label>Did or Do you smoke?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-2">
+                        		<label>If yes, Quantity per day</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Quantity"> <i
+										class="fa fa-user maroon"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Did or Do you drink alcohol?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-2">
+                        		<label>If yes, How much</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Quantity"> <i
+										class="fa fa-user maroon"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-4">
+                        		<label>How many glasses of water do you drink daily?</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Quantity"> <i
+										class="fa fa-user maroon"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="row">	<!-- First row -->
+							<div class="col-sm-4">
+								<label>What sports/exercise activities do you enjoy?</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Last Name"> <i
+										class="fa fa-user maroon"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<label>Do you perform exercises regularly?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+							<div class="col-sm-3">
+								<label>Sleeping position</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Back, Side, Stomach"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<label>Number of pillows</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Pillows"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+						<div class="row">  <!-- Second row --> 
+                            <div class="col-xs-3">
+								<label>Did or Do you wear orthotics?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+							<div class="col-sm-6">
+								<label>Do you receive non-medical care from another health care provider?</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Cell Phone"> <i
+										class="glyphicon glyphicon-phone"></i>
+									</span>
+								</div>
+							</div>
+                        </div> <!-- Second row ends--> 
+                        <hr />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-darkorange">
+				<span class="widget-caption">Childhood Truama</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-darkorange" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div class="row">	<!-- First row -->
+							<div class="col-sm-3">
+								<label>Date of injury</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-sm-2">
+                            	<label>Body Part injured</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Body Part"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Did your injury resolve?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-5">
+                            	<label>Brief account of the accident</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Brief account of accident"> <i
+										class="glyphicon glyphicon-pencil"></i>
+									</span>
+								</div>
+							</div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+                        <div class="row">
+                        	<div class="col-xs-3">
+								<label>Did your receive medical care?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-3">
+                            	<label>Doctor</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Doctor"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-6">
+                            	<label>Type of care given</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Type of care given"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+                        </div>
+                        <hr />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-darkorange">
+				<span class="widget-caption">Motor Vehicle Accident</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-darkorange" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div class="row">	<!-- First row -->
+							<div class="col-sm-3">
+								<label>Date of accident</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                            	<label>Were you: </label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Driver or Passenger"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Wearing Seatbelt</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-2">
+                            	<label>Collision part</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Side/Front/Rear"> <i
+										class="glyphicon glyphicon-pencil"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Did you strike your head?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+                        <div class="row">	<!-- First row -->
+                        	<div class="col-xs-2">
+								<label>Loss of consciousness?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                            <div class="col-xs-2">
+								<label>Sent to the hospital?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+							<div class="col-xs-2">
+								<label>Were X-RAYs taken?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+							<div class="col-xs-2">
+								<label>Medication given?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-xs-2">
+								<label>Medical care received?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-2">
+                            	<label>Medical Doctor</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Medical Doctor"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                        	<div class="col-sm-4">
+                            	<label>Type of care given</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Driver or Passenger"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-4">
+                            	<label>Injuries sustained</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Driver or Passenger"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<label>Did injuries in the accident resolve?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        </div>
+						
+						<hr />
+						
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-darkorange">
+				<span class="widget-caption">Home Accident</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-darkorange" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div class="row">	<!-- First row -->
+							<div class="col-sm-3">
+								<label>Date of accident</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                            	<label>Body Part injured </label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Body part injured"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Did your injury resolve</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-4">
+								<label>Brief account of accident</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Breif account of accident"> <i
+										class="fa fa-user maroon"></i>
+									</span>
+								</div>
+							</div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+						<div class="row">	<!-- First row -->
+							<div class="col-xs-2">
+								<label>Did you receive medical care?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+							<div class="col-sm-2">
+								<label>Doctor</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Doctor"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Type of care given</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Type of care given"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Injuries sustained</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Injuries sustained"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Did your injuries resolve</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-darkorange">
+				<span class="widget-caption">Sports Accident</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-darkorange" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div class="row">	<!-- First row -->
+							<div class="col-sm-3">
+								<label>Date of accident</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                            	<label>Body Part injured </label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Body part injured"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Did your injury resolve</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-4">
+								<label>Brief account of accident</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Breif account of accident"> <i
+										class="fa fa-user maroon"></i>
+									</span>
+								</div>
+							</div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+						<div class="row">	<!-- First row -->
+							<div class="col-xs-2">
+								<label>Did you receive medical care?</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+							<div class="col-sm-2">
+								<label>Doctor</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Doctor"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Type of care given</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Type of care given"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Injuries sustained</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Injuries sustained"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Did your injuries resolve</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-darkorange">
+				<span class="widget-caption">Work Accident</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-darkorange" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div class="row">	<!-- First row -->
+							<div class="col-sm-3">
+								<label>Date of accident</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-sm-2">
+                            	<label>Employer </label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Body part injured"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Claim made with WSIB</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-xs-3">
+								<label>Any permanent or partial disability</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-2">
+                            	<label>Disabilities</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Disabilities"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+						<div class="row">	<!-- First row -->
+							<div class="col-sm-3">
+								<label>Body part injured</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Body part injured"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Were X-RAYs taken</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+							<div class="col-sm-3">
+								<label>Brief account of accident</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Type of care given"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Did you receive medical care</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        	<div class="col-sm-2">
+								<label>Doctor</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Doctor"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+                        </div>	<!-- First row ends-->
+                        <hr />
+                        <div class="row">
+                        	<div class="col-sm-4">
+								<label>Type of care given</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Doctor"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<label>Injuries sustained</label>
+								<div class="form-group">
+									<span class="input-icon icon-right"> <input type="text"
+										class="form-control" placeholder="Doctor"> <i
+										class="fa fa-user darkorange"></i>
+									</span>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<label>Did your injuries resolve</label>
+								<label>
+									<input class="checkbox-slider slider-icon yesno" type="checkbox">
+									<span class="text"></span>
+								</label>
+                        	</div>
+                        </div>
+                        <hr />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+		<div class="widget">	<!-- widget -->
+			<div class="widget-header bordered-bottom bordered-darkorange">
+				<span class="widget-caption">Present Complaint</span>
+				<div class="widget-buttons buttons-bordered">
+					<label>
+						 <input class="checkbox-slider colored-darkorange" type="checkbox">
+						<span class="text"></span>
+					</label>
+				</div>
+				<div class="widget-buttons buttons-bordered">
+					<a href="" widget-maximize></a> 
+					<a href="" widget-collapse></a>
+				</div>
+			</div>
+			<div class="widget-body ">	<!-- widget-body -->
+				<div id="registration-form">	<!-- Registration div -->
+					<form role="form">	<!-- Form ends -->
+						<div id="painType" class="form-group">	<!-- Checkboxe form froup one -->
+						<label for="sharpCheckbox">Pain type: </label>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+									<span class="text">Sharp</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+									<span class="text">Dull</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Throbbing</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Aching</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Burning</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Stabbing</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" >
+									<span class="text">Weakness</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox">
+									<span class="text">Numbness</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  >
+									<span class="text">Tingling</span>
+								</label>
+						</div>	<!-- Checkboxes form group one ends-->
+						
+					<!--
+					<div class="row">
+						<div class="col-lg-5 col-sm-5 col-xs-5">
+							<label>
+								<input type="checkbox" class="text" checked="checked">
+								<span class="text">Other</span>
+							</label>
+							<input type="text" class="form-control" placeholder="Other pain type description">
+						</div>
+					</div>	-->
+					<hr />
+					<div class="row">
+						<div class="col-xs-1 col-md-1 col-lg-1">
+						<label>
+								<input type="checkbox" class="text" >
+								<span class="text">Other</span>
+							</label>
+						</div>
+					
+						<div class="col-xs-4 col-md-4 col-lg-4">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="Other condition">
+								</span>	
+							</div>
+					</div>
+					<hr />
+					<br />
+					<div class="row">
+						<div class="col-sm-3">
+							<label>Location of the pain</label>
+							<div class="form-group">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="Pain location"> <i
+									class="fa fa-street-view"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<label for="slider">Have you had this problem before?</label>
+							<label id="slider">
+								<input class="checkbox-slider slider-icon yesno" type="checkbox">
+								<span class="text"> </span>
+						</label>
+						</div>
+						<div class="col-sm-3">
+							<label>When did it last occur?</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" init-date="Date of birth" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+						</div>
+						<div class="col-sm-3">
+							<label>How did it happen</label>
+							<div class="form-group">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="How?"> <i
+									class="fa fa-question palegreen"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<hr />
+					<div class="row">
+						<div class="col-sm-3">
+							<label>What makes it worst?</label>
+							<div class="form-group">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="What makes it worst"> <i
+									class="fa fa-street-view"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<label>What makes it better?</label>
+							<div class="form-group">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="What makes it worst"> <i
+									class="fa fa-street-view"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label for="slider">Does the pain radiate?</label>
+							<label id="slider">
+								<input class="checkbox-slider slider-icon yesno" type="checkbox">
+								<span class="text"> </span>
+						</label>
+						</div>
+						<div class="col-sm-4">
+							<label>If yes, where?</label>
+							<div class="form-group">
+								<span class="input-icon icon-right"> <input type="text"
+									class="form-control" placeholder="Where pain radiates"> <i
+									class="fa fa-street-view"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<hr />
+					<div class="form-group">	<!-- Title Form group -->
+							<label for="mrRadioBtn">Is the pain(pattern): </label>
+                            <div id="mrRadioBtn" class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blue" checked="checked">
+                                    <span class="text">Constant</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-danger">
+                                    <span class="text">Intermittent</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-success">
+                                    <span class="text">Varies</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">No-Pattern</span>
+                                </label>
+                            </div>
+                        </div>	<!-- Title Form group ends -->
+                        <hr />
+                        <label for="painPattern">On a scale from 1 to 10 (10 being the worst pain you've ever experienced), how would you rate your pain?</label>
+                        <div id="painPattern" class="form-group">	<!-- Title Form group -->
+                            <div id="mrRadioBtn" class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blue" >
+                                    <span class="text">1</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-danger">
+                                    <span class="text">2</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-success">
+                                    <span class="text">3</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">4</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">5</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">6</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">7</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">8</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">9</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">10</span>
+                                </label>
+                            </div>
+                        </div>	<!-- Title Form group ends -->
+                        <hr />
+                        <label for="painPattern">On a scale from 1 to 10 (10 being the worst pain you've ever experienced), how would you rate your pain?</label>
+                        <div id="painPattern" class="form-group">	<!-- Title Form group -->
+                            <div id="mrRadioBtn" class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blue" >
+                                    <span class="text">In the morning</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-danger">
+                                    <span class="text">Mid-Afternoon</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-success">
+                                    <span class="text">Evening</span>
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input name="form-field-radio" type="radio" class="colored-blueberry">
+                                    <span class="text">At night(wakes me up)</span>
+                                </label>
+                            </div>
+                        </div>	<!-- Title Form group ends -->
+                        <hr />
+					<br />
+					</form>	<!-- Form ends -->
+					</div>	<!-- Registration div ends-->
+				</div>	<!-- widget-body -->
+			</div>	<!-- widget ends-->
+	</div>
+</div>
+
+<div class="class="buttons-preview"">
+
+	<a class="btn btn-success " href="javascript:void(0);"><i class="fa fa-plus"></i> Add</a>
+	
+	<a class="btn btn-danger " href="javascript:void(0);"><i class="fa fa-times"></i> Cancel</a>
+
+</div>
+
