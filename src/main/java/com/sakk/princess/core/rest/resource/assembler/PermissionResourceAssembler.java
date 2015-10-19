@@ -33,19 +33,8 @@ public class PermissionResourceAssembler extends ResourceAssemblerSupport<Permis
 			permissionResource
 					.add(linkTo(methodOn(PermissionController.class).getPermission(permission.getId())).withSelfRel());
 
-			if (!permission.getRoleSet().isEmpty()) {
 
-				List<String> roleListString = new ArrayList<String>();
-
-				List<Role> roleList = Lists.newArrayList(permission.getRoleSet().iterator());
-
-				for (Role role : roleList) {
-					roleListString.add(role.getRolename());
-				}
-
-				permissionResource.add(linkTo(methodOn(RoleController.class).getRoleSublist(roleListString))
-						.withRel(PermissionResource.LINK_NAME_ROLES));
-			}
+		
 		} catch (PermissionNotFoundException | RoleNotFoundException e) {
 			e.printStackTrace();
 		}
