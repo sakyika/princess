@@ -2,6 +2,7 @@ package com.sakk.princess.core.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,7 +55,7 @@ public class RoleServiceImpl implements RoleService {
 			roleToUpdate.setId(role.getId());
 			roleToUpdate.setPermissionSet(role.getPermissions());
 			roleToUpdate.setRolename(role.getRolename());
-			roleToUpdate.setUserSet(role.getUserSet());
+			roleToUpdate.setUserList(role.getUserList());
 		}else{
 			throw new RoleNotFoundException();
 		}
@@ -88,7 +89,7 @@ public class RoleServiceImpl implements RoleService {
 	@Override
 	public List<Role> getUserRoles(Long userId){
 		
-		return roleRepository.findByuserSetId(userId);
+		return roleRepository.findByuserListId(userId);
 		
 	}
 	

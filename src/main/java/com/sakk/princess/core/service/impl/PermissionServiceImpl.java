@@ -54,7 +54,7 @@ public class PermissionServiceImpl implements PermissionService {
 		
 			permissionToUpdate.setId(permission.getId());
 			permissionToUpdate.setPermissionName(permission.getPermissionName());
-			permissionToUpdate.setRoleSet(permission.getRoleSet());
+			permissionToUpdate.setRoleList(permission.getRoleList());
 		}else{
 			throw new PermissionNotFoundException();
 		}

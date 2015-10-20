@@ -1,6 +1,6 @@
 package com.sakk.princess.core.model;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -41,7 +41,7 @@ public class Permission extends BaseEntity implements GrantedAuthority {
 	@JoinTable(name = "role_permissions", 
 		joinColumns = { @JoinColumn(name = "permission_id", referencedColumnName = "id") }, 
 		inverseJoinColumns = { @JoinColumn(name = "role_id", referencedColumnName = "id") })
-	private Set<Role> roleSet;
+	private List<Role> roleList;
 
 	public String getPermissionName() {
 		return permissionName;
@@ -56,12 +56,12 @@ public class Permission extends BaseEntity implements GrantedAuthority {
 		return permissionName;
 	}
 
-	public Set<Role> getRoleSet() {
-		return roleSet;
+	public List<Role> getRoleList() {
+		return roleList;
 	}
 
-	public void setRoleSet(Set<Role> roleSet) {
-		this.roleSet = roleSet;
+	public void setRoleList(List<Role> roleList) {
+		this.roleList = roleList;
 	}
 
 	@Override

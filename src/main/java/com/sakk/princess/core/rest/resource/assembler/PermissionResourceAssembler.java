@@ -3,14 +3,9 @@ package com.sakk.princess.core.rest.resource.assembler;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 
-import com.google.common.collect.Lists;
 import com.sakk.princess.core.model.Permission;
-import com.sakk.princess.core.model.Role;
 import com.sakk.princess.core.rest.controller.PermissionController;
 import com.sakk.princess.core.rest.controller.RoleController;
 import com.sakk.princess.core.rest.resource.PermissionResource;
@@ -33,7 +28,8 @@ public class PermissionResourceAssembler extends ResourceAssemblerSupport<Permis
 			permissionResource
 					.add(linkTo(methodOn(PermissionController.class).getPermission(permission.getId())).withSelfRel());
 
-
+			permissionResource.add(linkTo(methodOn(RoleController.class).getRoleUsers(permission.getId()))
+					.withRel(PermissionResource.LINK_NAME_ROLES));
 		
 		} catch (PermissionNotFoundException | RoleNotFoundException e) {
 			e.printStackTrace();

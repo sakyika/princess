@@ -34,7 +34,7 @@ public class UserResourceAssembler extends ResourceAssemblerSupport<User, UserRe
 			
 */
 			
-			userResource.add(linkTo(methodOn(RoleController.class).getUserRoles(user.getId())).withRel(UserResource.LINK_NAME_ROLE));
+			userResource.add(linkTo(methodOn(RoleController.class).getRoleUsers(user.getId())).withRel(UserResource.LINK_NAME_ROLE));
 			
 
 		} catch (UserNotFoundException | RoleNotFoundException e) {

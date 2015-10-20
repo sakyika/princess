@@ -67,8 +67,9 @@ public class RoleController {
 	
 	// @PreAuthorize("hasAnyRole('CTRL_ROLE_LIST_GET')")
 		@RequestMapping(value = "/roleNameList", method = RequestMethod.GET)
-		public ResponseEntity<RoleListResource> getUserRoles(
+		public ResponseEntity<RoleListResource> getRoleUsers(
 				@RequestParam(value = "roleId", required = false) Long roleId) throws RoleNotFoundException {
+			
 
 			RoleList roleList = new RoleList(roleService.getUserRoles(roleId));			
 

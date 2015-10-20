@@ -68,6 +68,33 @@ public class PermissionController {
 	}
 	
 	// @PreAuthorize("hasAnyRole('CTRL_PERM_LIST_GET')")
+		@RequestMapping(method = RequestMethod.GET)
+		public ResponseEntity<PermissionListResource> getPermissionRoles(
+				@RequestParam(value = "permissionId", required = false) Long permissionId){
+
+			PermissionList permissionList = null;
+
+			if (permissionId == null) {
+				permissionList = new PermissionList(permissionService.getPermissions());
+				
+			} else {
+				Permission permission = permissionService.getPermission(permissionId);
+
+				permissionList = new PermissionList(new ArrayList<Permission>());
+				if (permission != null) {
+
+					permissionList = new PermissionList(Arrays.asList(permission));
+				}
+			}
+
+			PermissionListResource permissionListResource = new PermissionListResourceAssembler()
+					.toResource(permissionList);
+
+			return new ResponseEntity<PermissionListResource>(permissionListResource, HttpStatus.OK);
+
+		}
+	
+	// @PreAuthorize("hasAnyRole('CTRL_PERM_LIST_GET')")
 	@RequestMapping(value = "/permissionnameList", method = RequestMethod.GET)
 	public ResponseEntity<PermissionListResource> getPermissionSublist(
 			@RequestParam(value = "permissionnameList", required = false) List<String> permissionnameList)

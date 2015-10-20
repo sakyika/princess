@@ -99,7 +99,7 @@ public class PermissionDAOImpl implements PermissionDAO {
 			if (permToUpdate.getId() == permissionCheck.getId()) {
 				permToUpdate.setId(permission.getId());
 				permToUpdate.setPermissionName(permission.getPermissionName());
-				permToUpdate.setRoleSet(permission.getRoleSet());
+				permToUpdate.setRoleList(permission.getRoleList());
 				getCurrentSession().update(permToUpdate);
 			} else {
 				String message = "The permission ["
@@ -110,7 +110,7 @@ public class PermissionDAOImpl implements PermissionDAO {
 		} catch (PermissionNotFoundException e) {
 			permToUpdate.setId(permission.getId());
 			permToUpdate.setPermissionName(permission.getPermissionName());
-			permToUpdate.setRoleSet(permission.getRoleSet());
+			permToUpdate.setRoleList(permission.getRoleList());
 			getCurrentSession().update(permToUpdate);
 		}
 

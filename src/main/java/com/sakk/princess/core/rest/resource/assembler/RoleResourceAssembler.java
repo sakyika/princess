@@ -49,11 +49,11 @@ public class RoleResourceAssembler extends ResourceAssemblerSupport<Role, RoleRe
 						.withRel(RoleResource.LINK_NAME_PERMISSIONS));
 			}
 
-			if (!role.getUserSet().isEmpty()) {
+			if (!role.getUserList().isEmpty()) {
 
 				List<String> userStringList = new ArrayList<String>();
 
-				List<User> userList = Lists.newArrayList(role.getUserSet().iterator());
+				List<User> userList = Lists.newArrayList(role.getUserList().iterator());
 
 				for (User user : userList) {
 					userStringList.add(user.getUsername());

@@ -20,7 +20,7 @@ public class PermissionResource extends Resource<Permission> {
 		Permission permission = new Permission();
 		
 		permission.setPermissionName(super.getContent().getPermissionName());
-		permission.setRoleSet(super.getContent().getRoleSet());
+		permission.setRoleList(super.getContent().getRoleList());
 		
 		return permission;
 	}

@@ -22,7 +22,7 @@ public class RoleResource extends Resource<Role> {
 		
 		role.setRolename(super.getContent().getRolename());
 		role.setPermissionSet(super.getContent().getPermissions());
-		role.setUserSet(super.getContent().getUserSet());
+		role.setUserList(super.getContent().getUserList());
 		
 		return role;
 	}

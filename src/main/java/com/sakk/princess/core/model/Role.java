@@ -1,6 +1,7 @@
 package com.sakk.princess.core.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -50,7 +51,7 @@ public class Role extends BaseEntity implements Serializable, GrantedAuthority  
         joinColumns        = {@JoinColumn(name = "role_id", referencedColumnName = "id")},  
         inverseJoinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")}  
     )  
-    private Set<User> userSet;
+    private List<User> userList;
     
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
@@ -68,12 +69,12 @@ public class Role extends BaseEntity implements Serializable, GrantedAuthority  
         this.roleName = rolename;
     }
 
-    public Set<User> getUserSet() {
-        return userSet;
+    public List<User> getUserList() {
+        return userList;
     }
 
-    public void setUserSet(Set<User> userSet) {
-        this.userSet = userSet;
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
     }
 
     public Set<Permission> getPermissions() { 

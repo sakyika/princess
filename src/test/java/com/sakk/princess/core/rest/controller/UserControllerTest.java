@@ -2,7 +2,7 @@ package com.sakk.princess.core.rest.controller;
 
 import static org.hamcrest.Matchers.endsWith;
 import static org.hamcrest.Matchers.hasItem;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.*;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -27,43 +27,43 @@ import com.sakk.princess.core.service.UserService;
 public class UserControllerTest {
 
 	@InjectMocks
-	private UserController controller;
+	private UserController userController;
 
 	@Mock
-	private UserService service;
+	private UserService userService;
 
 	private MockMvc mockMvc;
-
-	// private ArgumentCaptor<User> accountCaptor;
 
 	@Before
 	public void setup() {
 
 		MockitoAnnotations.initMocks(this);
 
-		mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+		mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
 
 	}
-	/*
+	
 	@Test 
 	public void getExistingUser() throws Exception{
 		User user = new User();
 		user.setId(56L);
+		user.setEnabled(true);
 		user.setUsername("kwadwo");
-		user.setPassword("kwadwo");
+		user.setPassword("password");
+		user.setRole(null);
 		
-		when(service.getUser(56L)).thenReturn(user);
+		when(userService.getUser(56L)).thenReturn(user);
 		
-		mockMvc.perform(get("/rest/user/56"))
+		mockMvc.perform(get("/rest/users/56"))
 			.andDo(print())
 			.andExpect(jsonPath("$.username", is(user.getUsername())))
-			.andExpect(jsonPath("$.links[*].href", hasItem(endsWith("/rest/user/56"))))
+			.andExpect(jsonPath("$.role", is(nullValue())))
+			.andExpect(jsonPath("$.links[*].href", hasItem(endsWith("/rest/users/56"))))
 			.andExpect(status().isOk());
 		
 	}
 	
 	
-
 	@Test
 	public void getUsers() throws Exception {
 
@@ -93,14 +93,15 @@ public class UserControllerTest {
 		userD.setUsername("userD");
 		users.add(userD);
 
-		when(service.getUsers()).thenReturn(users);
+		when(userService.getUsers()).thenReturn(users);
 
 		mockMvc.perform(get("/rest/users"))
 				.andDo(print())
-				.andExpect(
-						jsonPath("$.users[*].username",
-								hasItems(endsWith("userA"), endsWith("userB"), endsWith("userC"), endsWith("userD")))) 
+				.andExpect(jsonPath("$.users[0].username", hasItem("userA")))
+				.andExpect(jsonPath("$.users[1].username", hasItem("userB")))
+				.andExpect(jsonPath("$.users[2].username", hasItem("userC")))
+				.andExpect(jsonPath("$.users[3].username", hasItem("userD")))
 				.andExpect(status().isOk());
 	}
-*/
+
 }
