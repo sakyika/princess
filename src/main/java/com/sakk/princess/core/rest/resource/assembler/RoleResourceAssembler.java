@@ -35,21 +35,20 @@ public class RoleResourceAssembler extends ResourceAssemblerSupport<Role, RoleRe
 		try {
 			roleResource.add(linkTo(methodOn(RoleController.class).getRole(role.getId())).withSelfRel());
 
-			if (!role.getPermissions().isEmpty()) {
-				
+			if (role.getPermissionList() != null) {
 				List<String> permissionStringList = new ArrayList<String>();
 				
-				List<Permission> permissionList = Lists.newArrayList(role.getPermissions().iterator());
+				List<Permission> permissionList = Lists.newArrayList(role.getPermissionList().iterator());
 				
 				for(Permission permission : permissionList){
 					permissionStringList.add(permission.getPermissionName());
 				}
 				
 				roleResource.add(linkTo(methodOn(PermissionController.class).getPermissionSublist(permissionStringList))
-						.withRel(RoleResource.LINK_NAME_PERMISSIONS));
+						.withRel(RoleResource.LINK_NAME_PERMISSIONS));	
 			}
 
-			if (!role.getUserList().isEmpty()) {
+			if (role.getUserList() != null) {
 
 				List<String> userStringList = new ArrayList<String>();
 

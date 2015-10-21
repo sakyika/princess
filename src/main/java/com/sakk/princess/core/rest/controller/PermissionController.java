@@ -17,16 +17,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sakk.princess.core.model.Permission;
+import com.sakk.princess.core.model.Role;
 import com.sakk.princess.core.rest.exception.ConflictException;
 import com.sakk.princess.core.rest.resource.PermissionListResource;
 import com.sakk.princess.core.rest.resource.PermissionResource;
+import com.sakk.princess.core.rest.resource.RoleListResource;
 import com.sakk.princess.core.rest.resource.assembler.PermissionListResourceAssembler;
 import com.sakk.princess.core.rest.resource.assembler.PermissionResourceAssembler;
+import com.sakk.princess.core.rest.resource.assembler.RoleListResourceAssembler;
 import com.sakk.princess.core.service.PermissionService;
 import com.sakk.princess.core.service.exceptions.DuplicatePermissionException;
 import com.sakk.princess.core.service.exceptions.PermissionExistsException;
 import com.sakk.princess.core.service.exceptions.PermissionNotFoundException;
 import com.sakk.princess.core.service.util.PermissionList;
+import com.sakk.princess.core.service.util.RoleList;
 
 @RestController
 @RequestMapping(value = "/rest/permissions", produces = "application/hal+json")
@@ -68,29 +72,28 @@ public class PermissionController {
 	}
 	
 	// @PreAuthorize("hasAnyRole('CTRL_PERM_LIST_GET')")
-		@RequestMapping(method = RequestMethod.GET)
-		public ResponseEntity<PermissionListResource> getPermissionRoles(
-				@RequestParam(value = "permissionId", required = false) Long permissionId){
+		@RequestMapping(value = "/{permissionId}/roles", method = RequestMethod.GET)
+		public ResponseEntity<RoleListResource> getPermissionRoles(@PathVariable Long permissionId){
 
-			PermissionList permissionList = null;
+			Permission permission = permissionService.getPermission(permissionId);
+			RoleList roleList = null;
+			RoleListResource roleListResource = null;
+			
+			List<Role> rList = null;
+			
 
-			if (permissionId == null) {
-				permissionList = new PermissionList(permissionService.getPermissions());
-				
-			} else {
-				Permission permission = permissionService.getPermission(permissionId);
-
-				permissionList = new PermissionList(new ArrayList<Permission>());
-				if (permission != null) {
-
-					permissionList = new PermissionList(Arrays.asList(permission));
-				}
+			if (permission != null) {
+				rList = permission.getRoleList();		
+			} 
+			
+			if(!rList.isEmpty()){
+				roleList = new RoleList(rList);
+				roleListResource = new RoleListResourceAssembler().toResource(roleList);
+				return new ResponseEntity<RoleListResource>(roleListResource, HttpStatus.OK);
 			}
-
-			PermissionListResource permissionListResource = new PermissionListResourceAssembler()
-					.toResource(permissionList);
-
-			return new ResponseEntity<PermissionListResource>(permissionListResource, HttpStatus.OK);
+			else {
+				return new ResponseEntity<RoleListResource>(HttpStatus.NOT_FOUND);
+			}
 
 		}
 	
@@ -150,6 +153,46 @@ public class PermissionController {
 			throw new ConflictException(exception);
 		}
 	}
-
+	
+	
+	@RequestMapping(value = "/{permissionId}", method = RequestMethod.DELETE)
+	public ResponseEntity<PermissionResource> deletePermission(@PathVariable Long permissionId) throws DuplicatePermissionException {
+		
+		Permission permission = permissionService.deletePermission(permissionId);
+		
+		if(permission != null){
+			PermissionResource permissionResource = new PermissionResourceAssembler().toResource(permission);
+			return new ResponseEntity<PermissionResource>(permissionResource, HttpStatus.OK);
+		}
+		else{
+			return new ResponseEntity<PermissionResource>(HttpStatus.NOT_FOUND);
+		}
+		
+	}
+	
+	@RequestMapping(value = "/{permissionId}", method = RequestMethod.PUT)
+	public ResponseEntity<PermissionResource> updatePermission(@PathVariable Long permissionId, 
+			@RequestBody PermissionResource sentPermisionResource) {
+		
+		Permission permissionToUpdate = permissionService.getPermission(permissionId);
+		
+		if(permissionToUpdate != null){
+			permissionToUpdate.setPermissionName(sentPermisionResource.toPermission().getPermissionName());
+			permissionToUpdate.setRoleList(sentPermisionResource.toPermission().getRoleList());
+			
+			Permission permission = permissionService.updatePermission(permissionToUpdate);
+			if(permission != null){
+				PermissionResource permissionResource = new PermissionResourceAssembler().toResource(permission);
+				return new ResponseEntity<PermissionResource>(permissionResource, HttpStatus.OK);
+			}
+			else{
+				return new ResponseEntity<PermissionResource>(HttpStatus.NOT_FOUND);
+			}
+				
+		}
+		else{
+			return new ResponseEntity<PermissionResource>(HttpStatus.NOT_FOUND);
+		}
+	}
 }
 

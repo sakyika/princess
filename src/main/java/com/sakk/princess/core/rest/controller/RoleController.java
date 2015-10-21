@@ -16,17 +16,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sakk.princess.core.model.Permission;
 import com.sakk.princess.core.model.Role;
+import com.sakk.princess.core.model.User;
 import com.sakk.princess.core.rest.exception.ConflictException;
+import com.sakk.princess.core.rest.resource.PermissionListResource;
 import com.sakk.princess.core.rest.resource.RoleListResource;
 import com.sakk.princess.core.rest.resource.RoleResource;
+import com.sakk.princess.core.rest.resource.UserListResource;
+import com.sakk.princess.core.rest.resource.assembler.PermissionListResourceAssembler;
 import com.sakk.princess.core.rest.resource.assembler.RoleListResourceAssembler;
 import com.sakk.princess.core.rest.resource.assembler.RoleResourceAssembler;
+import com.sakk.princess.core.rest.resource.assembler.UserListResourceAssembler;
 import com.sakk.princess.core.service.RoleService;
 import com.sakk.princess.core.service.exceptions.DuplicateRoleException;
 import com.sakk.princess.core.service.exceptions.RoleExistsException;
 import com.sakk.princess.core.service.exceptions.RoleNotFoundException;
+import com.sakk.princess.core.service.exceptions.UserNotFoundException;
+import com.sakk.princess.core.service.util.PermissionList;
 import com.sakk.princess.core.service.util.RoleList;
+import com.sakk.princess.core.service.util.UserList;
 
 @RestController
 @RequestMapping(value = "/rest/roles", produces = "application/hal+json")
@@ -65,20 +74,6 @@ public class RoleController {
 	}
 	
 	
-	// @PreAuthorize("hasAnyRole('CTRL_ROLE_LIST_GET')")
-		@RequestMapping(value = "/roleNameList", method = RequestMethod.GET)
-		public ResponseEntity<RoleListResource> getRoleUsers(
-				@RequestParam(value = "roleId", required = false) Long roleId) throws RoleNotFoundException {
-			
-
-			RoleList roleList = new RoleList(roleService.getUserRoles(roleId));			
-
-			RoleListResource roleListResource = new RoleListResourceAssembler().toResource(roleList);
-
-			return new ResponseEntity<RoleListResource>(roleListResource, HttpStatus.OK);
-
-		}
-	
 /*
 	// @PreAuthorize("hasAnyRole('CTRL_ROLE_LIST_GET')")
 	@RequestMapping(value = "/roleNameList", method = RequestMethod.GET)
@@ -101,6 +96,55 @@ public class RoleController {
 	}
 
 */
+		
+		// @PreAuthorize("hasAnyRole('CTRL_ROLE_LIST_GET')")
+		@RequestMapping(value = "/{roleId}/users", method = RequestMethod.GET)
+		public ResponseEntity<UserListResource> getRoleUsers(@PathVariable Long roleId) throws UserNotFoundException {
+
+			Role role = roleService.getRole(roleId);
+			UserList userList = null;
+			UserListResource userListResource = null;
+			
+			List<User> uList = null;
+
+			if(role != null){
+				uList = role.getUserList();
+			}
+			
+			if(!uList.isEmpty()){
+				userList = new UserList(uList);
+				userListResource = new UserListResourceAssembler().toResource(userList);
+				return new ResponseEntity<UserListResource>(userListResource, HttpStatus.OK);
+			}
+			else{
+				return new ResponseEntity<UserListResource>(HttpStatus.NOT_FOUND);
+			}
+
+		}
+		
+	// @PreAuthorize("hasAnyRole('CTRL_ROLE_LIST_GET')")
+	@RequestMapping(value = "/{roleId}/permissions", method = RequestMethod.GET)
+	public ResponseEntity<PermissionListResource> getRolePermissions(@PathVariable Long roleId) throws UserNotFoundException {
+
+		Role role = roleService.getRole(roleId);
+		PermissionList permissionList = null;
+		PermissionListResource permissionListResource = null;
+
+		List<Permission> pList = null;
+
+		if (role != null) {
+			pList = role.getPermissionList();
+		}
+
+		if (!pList.isEmpty()) {
+			permissionList = new PermissionList(pList);
+			permissionListResource = new PermissionListResourceAssembler().toResource(permissionList);
+			return new ResponseEntity<PermissionListResource>(permissionListResource, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<PermissionListResource>(HttpStatus.NOT_FOUND);
+		}
+
+	}
 
 	@RequestMapping(value = "/{roleId}", method = RequestMethod.GET)
 	public ResponseEntity<RoleResource> getRole(@PathVariable Long roleId) throws RoleNotFoundException {
@@ -129,6 +173,44 @@ public class RoleController {
 			return new ResponseEntity<RoleResource>(roleResource, headers, HttpStatus.CREATED);
 		} catch (RoleExistsException exception) {
 			throw new ConflictException(exception);
+		}
+	}
+	
+	@RequestMapping(value = "/{roleId}", method = RequestMethod.DELETE)
+	public ResponseEntity<RoleResource> deleteRole(@PathVariable Long roleId) {
+		
+		Role role = roleService.deleteRole(roleId);
+		
+		if(role != null){
+			RoleResource roleResource = new RoleResourceAssembler().toResource(role);
+			return new ResponseEntity<RoleResource>(roleResource, HttpStatus.OK);
+		}
+		
+		return null;
+	}
+	
+	@RequestMapping(value = "/{roleId}", method = RequestMethod.PUT)
+	public ResponseEntity<RoleResource> updateRole(@PathVariable Long roleId,
+			@RequestBody RoleResource sentRoleResource) {
+		
+		Role roleToUpdate = roleService.getRole(roleId);
+		
+		if(roleToUpdate != null){
+			roleToUpdate.setRolename(sentRoleResource.toRole().getRolename());
+			roleToUpdate.setUserList(sentRoleResource.toRole().getUserList());
+			
+			Role permission = roleService.updateRole(roleToUpdate);
+			if(permission != null){
+				RoleResource permissionResource = new RoleResourceAssembler().toResource(permission);
+				return new ResponseEntity<RoleResource>(permissionResource, HttpStatus.OK);
+			}
+			else{
+				return new ResponseEntity<RoleResource>(HttpStatus.NOT_FOUND);
+			}
+				
+		}
+		else{
+			return new ResponseEntity<RoleResource>(HttpStatus.NOT_FOUND);
 		}
 	}
 

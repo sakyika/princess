@@ -130,7 +130,7 @@ public class User extends BaseEntity implements UserDetails {
 	@JsonIgnore
 	public Set<Permission> getPermissions() {
 		Set<Permission> perms = new HashSet<Permission>();
-		perms.addAll(role.getPermissions());
+		perms.addAll(role.getPermissionList());
 		return perms;
 	}
 

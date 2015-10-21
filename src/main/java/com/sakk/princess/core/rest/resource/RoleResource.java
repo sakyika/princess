@@ -21,7 +21,7 @@ public class RoleResource extends Resource<Role> {
 		Role role = new Role();
 		
 		role.setRolename(super.getContent().getRolename());
-		role.setPermissionSet(super.getContent().getPermissions());
+		role.setPermissionList(super.getContent().getPermissionList());
 		role.setUserList(super.getContent().getUserList());
 		
 		return role;

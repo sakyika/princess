@@ -27,10 +27,10 @@ public class PermissionResourceAssembler extends ResourceAssemblerSupport<Permis
 		try {
 			permissionResource
 					.add(linkTo(methodOn(PermissionController.class).getPermission(permission.getId())).withSelfRel());
-
+/*
 			permissionResource.add(linkTo(methodOn(RoleController.class).getRoleUsers(permission.getId()))
 					.withRel(PermissionResource.LINK_NAME_ROLES));
-		
+*/	
 		} catch (PermissionNotFoundException | RoleNotFoundException e) {
 			e.printStackTrace();
 		}

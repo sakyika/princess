@@ -2,7 +2,6 @@ package com.sakk.princess.core.model;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -59,7 +58,7 @@ public class Role extends BaseEntity implements Serializable, GrantedAuthority  
         joinColumns        = { @JoinColumn(name = "role_id",       referencedColumnName = "id") },
         inverseJoinColumns = { @JoinColumn(name = "permission_id", referencedColumnName = "id") }
     )    
-    private Set<Permission> permissionSet;
+    private List<Permission> permissionList;
 
     public String getRolename() {
         return roleName;
@@ -77,12 +76,12 @@ public class Role extends BaseEntity implements Serializable, GrantedAuthority  
         this.userList = userList;
     }
 
-    public Set<Permission> getPermissions() { 
-        return permissionSet; 
+    public List<Permission> getPermissionList() { 
+        return permissionList; 
     }
 
-    public void setPermissionSet(Set<Permission> permissionSet) {
-        this.permissionSet = permissionSet;
+    public void setPermissionList(List<Permission> permissionList) {
+        this.permissionList = permissionList;
     }
     
     @Override

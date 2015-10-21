@@ -53,7 +53,7 @@ public class RoleServiceImpl implements RoleService {
 		
 		if(roleToUpdate != null){
 			roleToUpdate.setId(role.getId());
-			roleToUpdate.setPermissionSet(role.getPermissions());
+			roleToUpdate.setPermissionList(role.getPermissionList());
 			roleToUpdate.setRolename(role.getRolename());
 			roleToUpdate.setUserList(role.getUserList());
 		}else{
