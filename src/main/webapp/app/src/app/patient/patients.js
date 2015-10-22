@@ -142,7 +142,7 @@ angular.module('princess.patients', [ 'ui.router', 'plusOne', 'angular-hal' ])
 		
 			var deferred = $q.defer();
 			
-			halClient.$get("http://localhost:9090/princess/rest/patients").then(function (data){
+			halClient.$get("/rest/patients").then(function (data){
 				deferred.resolve(data);
 			});
 			

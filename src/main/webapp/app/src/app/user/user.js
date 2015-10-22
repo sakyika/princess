@@ -45,7 +45,7 @@ angular.module( 'princess.user', [
 
 /*
 	session.logged = function(){
-		$http.get('/princess/user', )
+		$http.get('/user', )
 	};
 */
 
@@ -54,7 +54,7 @@ angular.module( 'princess.user', [
 		
 		var headers = {'Authorization': "Basic " + btoa(credentials.name + ":" + credentials.password)};
 		
-		$http.get('/princess/user', {
+		$http.get('/user', {
 			headers : headers
 		}).success(function(data){
 			if(data.name){
@@ -97,7 +97,7 @@ angular.module( 'princess.user', [
 	
 	session.logout = function(){
 		
-		$http.post('/princess/logout', {}).success(function(){
+		$http.post('/logout', {}).success(function(){
 			
 			$rootScope.authenticated = false;
 			$location.path("/login");
