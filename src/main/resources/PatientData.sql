@@ -20,20 +20,20 @@ call createPatientPermission ('CTRL_PATIENT_ROLE_LIST_DELETE');
 
 call createPatientRole('ROLE_MANAGER', @role_manager);
 
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_USER_LIST_GET');
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_USER_ADD_POST');
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_USER_UPDATE_PUT');
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_USER_LIST_DELETE');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_USER_LIST_GET');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_USER_ADD_POST');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_USER_UPDATE_PUT');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_USER_LIST_DELETE');
 
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_PERMISSION_LIST_GET');
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_PERMISSION_ADD_POST');
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_PERMISSION_UPDATE_PUT');
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_PERMISSION_LIST_DELETE');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_PERMISSION_LIST_GET');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_PERMISSION_ADD_POST');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_PERMISSION_UPDATE_PUT');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_PERMISSION_LIST_DELETE');
 
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_ROLE_LIST_GET');
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_ROLE_ADD_POST');
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_ROLE_UPDATE_PUT');
-call createPatientRoleHasPatientPermission(role_manager, 'CTRL_PATIENT_ROLE_LIST_DELETE');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_ROLE_LIST_GET');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_ROLE_ADD_POST');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_ROLE_UPDATE_PUT');
+call createPatientRoleHasPatientPermission(@role_manager, 'CTRL_PATIENT_ROLE_LIST_DELETE');
 
 
 call createPatientRole('ROLE_DOCTOR', @role_doctor);
