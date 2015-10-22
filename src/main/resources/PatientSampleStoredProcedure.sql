@@ -1,0 +1,4 @@
+create procedure createPatients($patientNumber int(10), $title ENUM('MR', 'MRS', 'MISS', 'MS', 'DR'), $firstname varchar(50), $lastname varchar(50), $dob date, $address varchar(100), $homephone varchar(50), $workphone varchar(50), cellphone varchar(50), $occupation varchar(50), $employer varchar(50), $email varchar(50), $hearAboutUs varchar(500), $emergencyContact varchar(50), $emergencyContactPhone varchar(50))
+begin
+	insert into patients (patient_number, title, firstname, lastname, dob, address, homephone, workphone, cellphone, occupation, employer, email, hear_about_us, emergencycontact, emergencycontact_phone) values($patientNumber, $title, $firstname, $lastname, $dob, $address, $homephone, $workphone, $cellphone, $employer, $email, $hearAboutUs, $emergencyContact, $emergencyContactPhone);
+end	//

@@ -146,7 +146,7 @@ public class Patient extends BaseEntity {
 	@Column(name = "EMAIL", length = 50)
 	private String email;
 
-	@Column(name = "HEAR_ABOUT_US", length = 50)
+	@Column(name = "HEAR_ABOUT_US", length = 500)
 	private String hearAboutUs;
 
 	@Column(name = "EMERGENCYCONTACT", length = 50)

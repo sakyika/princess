@@ -1,16 +1,10 @@
 delimiter //
-/*DROP PROCEDURE IF EXISTS createStrategy;*/
 DROP PROCEDURE IF EXISTS createPermission;
 DROP PROCEDURE IF EXISTS createRole;
 DROP PROCEDURE IF EXISTS createRoleHasPermission;
 DROP PROCEDURE IF EXISTS createUser;
 DROP PROCEDURE IF EXISTS createUserHasRole;
-/*
-create procedure createStrategy($type varchar(50), $name varchar(50))
-begin
-    insert into strategy (type, name) values ($type, $name);
-end //
-*/
+
 create procedure createPermission($name varchar(50))
 begin
     insert into permissions (permissionname) values ($name);

@@ -170,6 +170,7 @@ public class PatientController {
 
 	@ApiOperation(value = "Create a patient", notes = "This can only be done by admin patient")
 	@RequestMapping(method = RequestMethod.POST)
+	@PreAuthorize("hasAuthority('CTRL_USER_LIST_GET')")
 	public ResponseEntity<PatientResource> addPatient(@RequestBody PatientResource sentPatient) {
 
 		try {
