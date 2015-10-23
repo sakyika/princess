@@ -7,7 +7,6 @@ import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 
 import com.sakk.princess.core.model.Permission;
 import com.sakk.princess.core.rest.controller.PermissionController;
-import com.sakk.princess.core.rest.controller.RoleController;
 import com.sakk.princess.core.rest.resource.PermissionResource;
 import com.sakk.princess.core.service.exceptions.PermissionNotFoundException;
 import com.sakk.princess.core.service.exceptions.RoleNotFoundException;
@@ -27,10 +26,10 @@ public class PermissionResourceAssembler extends ResourceAssemblerSupport<Permis
 		try {
 			permissionResource
 					.add(linkTo(methodOn(PermissionController.class).getPermission(permission.getId())).withSelfRel());
-/*
-			permissionResource.add(linkTo(methodOn(RoleController.class).getRoleUsers(permission.getId()))
+
+			permissionResource.add(linkTo(methodOn(PermissionController.class).getPermissionRoles(permission.getId()))
 					.withRel(PermissionResource.LINK_NAME_ROLES));
-*/	
+
 		} catch (PermissionNotFoundException | RoleNotFoundException e) {
 			e.printStackTrace();
 		}

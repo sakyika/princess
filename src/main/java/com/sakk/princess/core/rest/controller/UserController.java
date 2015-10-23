@@ -3,7 +3,6 @@ package com.sakk.princess.core.rest.controller;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -49,16 +48,14 @@ public class UserController {
 		this.userService = userService;
 	}
 
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	@ApiOperation(value="Get users", notes = "This can only be done by admin user")
+	@PreAuthorize("hasAnyAuthority('CTRL_USER_LIST_GET', 'CTRL_PATIENT_USER_LIST_GET')")
+	@ApiOperation(value = "Get users", notes = "This can only be done by admin user")
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<UserListResource> getUsers(
-			@RequestParam(value = "name", required = false) String name,
-			@RequestParam(value = "password", required = false) String password)
-			throws UserNotFoundException {
+	public ResponseEntity<UserListResource> getUsers(@RequestParam(value = "name", required = false) String name,
+			@RequestParam(value = "password", required = false) String password) throws UserNotFoundException {
 
 		UserList userList = null;
-		
+
 		if (name == null) {
 			userList = new UserList(userService.getUsers());
 		} else {
@@ -76,64 +73,40 @@ public class UserController {
 			}
 		}
 
-		UserListResource userListResource = new UserListResourceAssembler()
-				.toResource(userList);
+		UserListResource userListResource = new UserListResourceAssembler().toResource(userList);
 
 		return new ResponseEntity<UserListResource>(userListResource, HttpStatus.OK);
 
 	}
-	
-	// @PreAuthorize("hasAnyRole('CTRL_USER_LIST_GET')")
-	@RequestMapping(value = "/nameList", method = RequestMethod.GET)
-	public ResponseEntity<UserListResource> getUserSublist(
-			@RequestParam(value = "nameList", required = false) List<String> nameList)
-			throws UserNotFoundException {
 
-		UserList userList = null;
-		
-		if (nameList.isEmpty()) {
-			userList = new UserList(new ArrayList<User>());
-		} else {
-			userList = new UserList(userService.getUserSublist(nameList));
-
-		}
-
-		UserListResource userListResource = new UserListResourceAssembler()
-				.toResource(userList);
-
-		return new ResponseEntity<UserListResource>(userListResource, HttpStatus.OK);
-
-	}
-	
-	// @PreAuthorize("hasAnyRole('CTRL_USER_LIST_GET')")
+	@PreAuthorize("hasAnyAuthority('CTRL_USER_LIST_GET', 'CTRL_ROLE_LIST_GET', 'CTRL_PATIENT_USER_LIST_GET', 'CTRL_PATIENT_ROLE_LIST_GET')")
 	@RequestMapping(value = "/{userId}/role", method = RequestMethod.GET)
 	public ResponseEntity<RoleResource> getUserRole(@PathVariable Long userId) throws RoleNotFoundException {
 
 		User user = userService.getUser(userId);
 		Role role = null;
 		RoleResource roleResource = null;
-		
-		if(user != null){
+
+		if (user != null) {
 			role = user.getRole();
 		}
-		
-		if(role != null){
-				roleResource = new RoleResourceAssembler().toResource(role);
-				return new ResponseEntity<RoleResource>(roleResource, HttpStatus.OK);
-		}
-		else {
+
+		if (role != null) {
+			roleResource = new RoleResourceAssembler().toResource(role);
+			return new ResponseEntity<RoleResource>(roleResource, HttpStatus.OK);
+		} else {
 			return new ResponseEntity<RoleResource>(HttpStatus.NOT_FOUND);
 		}
-		
 
 	}
 
-	@ApiOperation(value="Get user", notes = "This can only be done by admin user")
+	@PreAuthorize("hasAnyAuthority('CTRL_USER_LIST_GET', 'CTRL_PATIENT_USER_LIST_GET')")
+	@ApiOperation(value = "Get user", notes = "This can only be done by admin user")
 	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)
 	public ResponseEntity<UserResource> getUser(@PathVariable Long userId) throws UserNotFoundException {
-		
+
 		User user = userService.getUser(userId);
-		
+
 		if (user != null) {
 			UserResource userResource = new UserResourceAssembler().toResource(user);
 			return new ResponseEntity<UserResource>(userResource, HttpStatus.OK);
@@ -142,67 +115,61 @@ public class UserController {
 		}
 	}
 
-	@ApiOperation(value="Create a user", notes = "This can only be done by admin user")
+	@PreAuthorize("hasAnyAuthority('CTRL_USER_ADD_POST', 'CTRL_PATIENT_USER_ADD_POST')")
+	@ApiOperation(value = "Create a user", notes = "This can only be done by admin user")
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<UserResource> createUser(
-			@RequestBody UserResource sentUser) throws DuplicateUserException {
-		
+	public ResponseEntity<UserResource> createUser(@RequestBody UserResource sentUser) throws DuplicateUserException {
+
 		User createdUser = null;
 
 		try {
 			createdUser = userService.addUser(sentUser.toUser());
-			UserResource res = new UserResourceAssembler()
-					.toResource(createdUser);
+			UserResource res = new UserResourceAssembler().toResource(createdUser);
 			HttpHeaders headers = new HttpHeaders();
 			headers.setLocation(URI.create(res.getLink("self").getHref()));
-			return new ResponseEntity<UserResource>(res, headers,
-					HttpStatus.CREATED);
+			return new ResponseEntity<UserResource>(res, headers, HttpStatus.CREATED);
 		} catch (UserExistsException exception) {
 			throw new ConflictException(exception);
 		}
 	}
-	
-	
+
+	@PreAuthorize("hasAnyAuthority('CTRL_USER_DELETE_DELETE', 'CTRL_PATIENT_USER_DELETE_DELETE')")
 	@RequestMapping(value = "/{userId}", method = RequestMethod.DELETE)
 	public ResponseEntity<UserResource> deletePermission(@PathVariable Long userId) {
-		
+
 		User user = userService.deleteUser(userId);
-		
-		if(user != null){
+
+		if (user != null) {
 			UserResource userResource = new UserResourceAssembler().toResource(user);
 			return new ResponseEntity<UserResource>(userResource, HttpStatus.OK);
-		}
-		else{
+		} else {
 			return new ResponseEntity<UserResource>(HttpStatus.NOT_FOUND);
 		}
-		
+
 	}
-	
-	
+
+	@PreAuthorize("hasAnyAuthority('CTRL_ROLE_UPDATE_PUT', 'CTRL_PATIENT_USER_UPDATE_PUT')")
 	@RequestMapping(value = "/{userId}", method = RequestMethod.PUT)
-	public ResponseEntity<UserResource> updateUser(@PathVariable Long userId, 
+	public ResponseEntity<UserResource> updateUser(@PathVariable Long userId,
 			@RequestBody UserResource sentUserResource) {
-		
+
 		User userToUpdate = userService.getUser(userId);
-		
-		if(userToUpdate != null){
+
+		if (userToUpdate != null) {
 			userToUpdate.setUsername(sentUserResource.toUser().getUsername());
 			userToUpdate.setRole(sentUserResource.toUser().getRole());
-			
+
 			User permission = userService.updateUser(userToUpdate);
-			if(permission != null){
+			if (permission != null) {
 				UserResource permissionResource = new UserResourceAssembler().toResource(permission);
 				return new ResponseEntity<UserResource>(permissionResource, HttpStatus.OK);
-			}
-			else{
+			} else {
 				return new ResponseEntity<UserResource>(HttpStatus.NOT_FOUND);
 			}
-				
-		}
-		else{
+
+		} else {
 			return new ResponseEntity<UserResource>(HttpStatus.NOT_FOUND);
 		}
 	}
-	
 
 }

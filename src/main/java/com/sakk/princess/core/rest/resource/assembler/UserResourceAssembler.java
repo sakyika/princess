@@ -13,7 +13,7 @@ import com.sakk.princess.core.service.exceptions.RoleNotFoundException;
 import com.sakk.princess.core.service.exceptions.UserNotFoundException;
 
 public class UserResourceAssembler extends ResourceAssemblerSupport<User, UserResource> {
-	
+
 	public UserResourceAssembler() {
 		super(UserController.class, UserResource.class);
 	}
@@ -25,17 +25,11 @@ public class UserResourceAssembler extends ResourceAssemblerSupport<User, UserRe
 
 		try {
 			userResource.add(linkTo(methodOn(UserController.class).getUser(user.getId())).withSelfRel());
-/*
+
 			if (user.getRole() != null) {
 				userResource.add(linkTo(methodOn(RoleController.class).getRole(user.getRole().getId()))
 						.withRel(UserResource.LINK_NAME_ROLE));
 			}
-			
-			
-*/
-			
-			//userResource.add(linkTo(methodOn(RoleController.class).getRoleUsers(user.getId())).withRel(UserResource.LINK_NAME_ROLE));
-			
 
 		} catch (UserNotFoundException | RoleNotFoundException e) {
 			e.printStackTrace();

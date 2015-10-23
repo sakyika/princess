@@ -13,13 +13,14 @@ end	//
 create procedure createPatientRole($roleName varchar(50), out $id int)
 begin
 	insert into roles (rolename) values ($roleName);
+	set $id := last_insert_id();
 end //
 
 create procedure createPatientRoleHasPatientPermission($roleId int, $permissionName varchar(50))
 begin
 	declare _permissionId int;
 	select id from permissions where permissionname = $permissionName into _permissionId;
-	insert into role_permissions (role_id, permission_id) values($roleId, $permissionName);
+	insert into role_permissions (role_id, permission_id) values($roleId, _permissionId);
 end //
 
 create procedure createPatientUser($username varchar(50), $password varchar(100), $enable tinyint(1), out $id int)

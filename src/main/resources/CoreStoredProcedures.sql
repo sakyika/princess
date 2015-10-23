@@ -23,9 +23,9 @@ begin
     insert into role_permissions (role_id, permission_id) values ($role_id, _perm_id);
 end //
 
-create procedure createUser($name varchar(50), out $id int)
+create procedure createUser($name varchar(50), $password varchar(100), $enable tinyint(1), out $id int)
 begin
-    insert into users (username, password, enabled) values ($name, 'password', 1);
+    insert into users (username, password, enabled) values ($name, $password, $enable);
     set $id := last_insert_id();
 end //
 

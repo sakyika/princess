@@ -31,12 +31,6 @@ import com.google.common.base.Objects;
 @Entity
 @Table(name = "USERS")
 public class User extends BaseEntity implements UserDetails {
-	/*
-	 * CREATE TABLE `USERS` ( `ID` int(6) NOT NULL AUTO_INCREMENT, `USERNAME`
-	 * VARCHAR(50) NOT NULL UNIQUE, `PASSWORD` VARCHAR(50) NOT NULL, `ENABLED`
-	 * BOOLEAN NOT NULL, PRIMARY KEY (`ID`) ) ENGINE=InnoDB DEFAULT
-	 * CHARSET=utf8;
-	 */
 
 	private static final long serialVersionUID = 6311364761937265306L;
 	static Logger logger = LoggerFactory.getLogger(User.class);
